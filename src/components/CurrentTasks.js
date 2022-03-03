@@ -24,6 +24,7 @@ function CurrentTasks() {
                 if(!tasks.id.toString().toLowerCase().includes(id.toString().toLowerCase())){
                     return tasks;
                 }
+                return null
             }))
         })
     }

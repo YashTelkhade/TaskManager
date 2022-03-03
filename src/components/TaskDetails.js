@@ -33,7 +33,8 @@ export default function TaskDetails() {
         task_description: data.get('task_description'),
         task_date:data.get('task_date')
     }
-    const response  = api.post("/tasks", request)
+    
+    api.post("/tasks", request)
 
 
 
