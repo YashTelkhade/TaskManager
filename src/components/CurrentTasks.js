@@ -2,6 +2,9 @@ import React, {useEffect,useState} from 'react'
 import "./CurrentTasks.css"
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
+import Button from '@mui/material/Button';
+
+  
 
 function CurrentTasks() {
 
@@ -34,7 +37,7 @@ function CurrentTasks() {
 
     <div className='CurrentTask'>
     <table class="table border shadow">
-        <thead>
+        {/* <thead>
             <tr class="bg-light">
                 <th scope="col">Id</th>
                 <th scope="col">Tasks</th>
@@ -42,12 +45,12 @@ function CurrentTasks() {
                 <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
-        </thead>
-        <tbody>
+        </thead> */}
+        <tbody class='table1'>
 
         {tasks.map((task, index) => (
             <>
-            <tr>
+            <tr class='row1'>
             <th scope="row">{index + 1}</th>
             <td>{task.task_title}         
             </td>
@@ -55,15 +58,21 @@ function CurrentTasks() {
             </td>
             
             <td>
-            <button class="btn btn-primary mr-2"  onClick={()=> deleteTasks(task.id)}>
-                Completed
-            </button >
+            <Button
+              type="submit"
+              variant="contained"
+    
+              onClick={()=> deleteTasks(task.id)}
+            >
+              Completed
+            </Button>
             </td>  
 
             <td>
-            <button class="btn btn-danger mr-2" onClick={()=> deleteTasks(task.id)}>
+            <Button color='error'               variant="contained"
+              onClick={()=> deleteTasks(task.id)}>
                 Delete
-            </button >
+            </Button >
             </td> 
             </tr>
             </> 

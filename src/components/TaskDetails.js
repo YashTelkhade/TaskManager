@@ -1,17 +1,14 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import api from "../api/task"
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../components/TaskDetails.css'
-
 
 
 const theme = createTheme();
@@ -36,8 +33,6 @@ export default function TaskDetails() {
     
     api.post("/tasks", request)
 
-
-
   };
 
   return (
@@ -55,14 +50,11 @@ export default function TaskDetails() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h4s">
             Task Manager
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
+            <Grid container spacing={3}>
               <Grid item xs={12}>
                 <TextField
                   required
@@ -83,10 +75,9 @@ export default function TaskDetails() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
                   fullWidth
                   name="task_date"
-                  label=""
+                  label="."
                   type="date"
                   id="task_date"
                 />
