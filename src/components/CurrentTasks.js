@@ -1,6 +1,5 @@
 import React, {useEffect,useState} from 'react'
 import "./CurrentTasks.css"
-import api from "../api/task"
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 
